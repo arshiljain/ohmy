@@ -1,3 +1,4 @@
+import { BrandingEnhancements } from "@/components/BrandingEnhancements";
 import { CapturedEnhancements } from "@/components/CapturedEnhancements";
 import { CapturedPage } from "@/components/CapturedPage";
 import { RiveEnhancements } from "@/components/RiveEnhancements";
@@ -8,6 +9,7 @@ export default function Home() {
     <div id="top">
       <SceneLayer />
       <CapturedPage />
+      <BrandingEnhancements />
       <CapturedEnhancements />
       <RiveEnhancements />
     </div>
