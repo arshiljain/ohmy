@@ -81,10 +81,20 @@ function retargetPrimaryLinks(root: Element) {
 
     if (href.includes("shopify.com") || href.includes("admin.shopify.com")) {
       if (label.includes("start a project")) link.href = "#contact";
-      else if (label.includes("shopify") || label.includes("dune rise studio")) link.href = "#top";
+      else if (label.includes("dune rise studio")) link.href = "#top";
       else link.href = "#work";
     }
   });
+}
+
+function ensureContactAnchor(root: Element) {
+  const existing = root.querySelector("#contact");
+  if (existing) return;
+
+  const candidate = Array.from(root.querySelectorAll<HTMLElement>("a, button"))
+    .find((element) => /talk|contact|get started|start a project|let's work/i.test(element.textContent ?? ""));
+
+  if (candidate) candidate.setAttribute("id", "contact");
 }
 
 export function BrandingEnhancements() {
@@ -96,15 +106,14 @@ export function BrandingEnhancements() {
       walkText(root);
       updateAttributes(root);
       retargetPrimaryLinks(root);
+      ensureContactAnchor(root);
 
       const logo = root.querySelector<HTMLElement>('a.back-to-top');
-      if (logo) {
-        logo.innerHTML = '<span aria-hidden="true" style="display:inline-block;font-weight:700;letter-spacing:-0.04em;font-size:1.05em">DUNE RISE</span>';
+      const logoText = logo?.querySelector<HTMLElement>("span.flex.flex-col");
+      if (logoText && logoText.dataset.duneBranded !== "true") {
+        logoText.innerHTML = "<span>DUNE RISE</span>";
+        logoText.dataset.duneBranded = "true";
       }
-
-      const contactCandidates = Array.from(root.querySelectorAll<HTMLElement>("[id]"));
-      const contact = contactCandidates.find((element) => /contact|footer|talk/i.test(`${element.id} ${element.textContent}`));
-      if (contact && !contact.id.toLowerCase().includes("contact")) contact.id = "contact";
     };
 
     applyBranding();
