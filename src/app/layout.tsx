@@ -3,9 +3,9 @@ import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Shopify Editions | Winter '26",
+  title: "DOPAMIN — Websites · Apps · Marketing",
   description:
-    "The commerce renaissance is here. Explore 150+ product updates across AI, retail, and more.",
+    "DOPAMIN builds high-end websites, apps, brand systems, e-commerce experiences, and growth marketing for ambitious businesses.",
 };
 
 export default function RootLayout({
