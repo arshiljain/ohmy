@@ -3,9 +3,9 @@ import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Shopify Editions | Winter '26",
+  title: "Dune Rise — Creative Technology Studio",
   description:
-    "The commerce renaissance is here. Explore 150+ product updates across AI, retail, and more.",
+    "Dune Rise builds distinctive brands, digital experiences, websites, and creative technology for ambitious ideas.",
 };
 
 export default function RootLayout({
