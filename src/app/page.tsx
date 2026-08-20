@@ -1,5 +1,6 @@
 import { CapturedEnhancements } from "@/components/CapturedEnhancements";
 import { CapturedPage } from "@/components/CapturedPage";
+import { DopaminBranding } from "@/components/DopaminBranding";
 import { RiveEnhancements } from "@/components/RiveEnhancements";
 import { SceneLayer } from "@/components/SceneLayer";
 
@@ -8,6 +9,7 @@ export default function Home() {
     <div id="top">
       <SceneLayer />
       <CapturedPage />
+      <DopaminBranding />
       <CapturedEnhancements />
       <RiveEnhancements />
     </div>
